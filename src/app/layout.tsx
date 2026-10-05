@@ -19,6 +19,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'HintLoop - Focused AI DSA Study Companion',
   description: 'A hint-based AI tutor for DSA interview preparation built with open-weight Gemma models for Hacktoberfest 2026.',
+  icons: {
+    icon: '/logo/logo.png',
+    shortcut: '/logo/logo.png',
+    apple: '/logo/logo.png',
+  },
 };
 
 export default function RootLayout({

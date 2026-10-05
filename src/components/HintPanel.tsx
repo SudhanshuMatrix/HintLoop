@@ -56,12 +56,12 @@ export function HintPanel({
   ];
 
   return (
-    <div className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-sm flex flex-col h-full min-h-[500px]">
+    <div className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-2xs flex flex-col h-full min-h-[500px]">
       
       {/* Panel Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
         <div className="flex items-center space-x-2.5">
-          <div className="p-2 rounded-lg bg-amber-50 border border-amber-200/70 text-amber-700 shadow-2xs icon-glow-amber">
+          <div className="p-2 rounded-lg bg-blue-50 border border-blue-200/70 text-blue-700 shadow-2xs icon-glow-blue">
             <IconLightbulb className="w-4 h-4" />
           </div>
           <div>
@@ -75,7 +75,7 @@ export function HintPanel({
         </div>
 
         {hints.length > 0 && (
-          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-2xs">
+          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 border border-slate-200/80 shadow-2xs">
             {hints.length} / 5 Steps
           </span>
         )}
@@ -93,9 +93,9 @@ export function HintPanel({
               <div
                 className={`w-full h-2 rounded-full transition-all duration-300 ${
                   isCurrent
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 shadow-xs'
+                    ? 'bg-blue-600 shadow-2xs'
                     : isDone
-                    ? 'bg-emerald-500'
+                    ? 'bg-blue-400'
                     : 'bg-slate-100'
                 }`}
               />
@@ -104,9 +104,9 @@ export function HintPanel({
                 <span
                   className={`text-[10px] font-sans font-semibold transition-colors ${
                     isCurrent
-                      ? 'text-indigo-900 font-bold'
+                      ? 'text-blue-900 font-bold'
                       : isDone
-                      ? 'text-emerald-700'
+                      ? 'text-blue-700'
                       : 'text-slate-400'
                   }`}
                 >
@@ -122,17 +122,17 @@ export function HintPanel({
       <div className="flex-1 overflow-y-auto space-y-4 pr-1">
         {hints.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center p-6 border-2 border-dashed border-slate-200/90 rounded-xl my-2 bg-slate-50/40">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-100 to-indigo-100 border border-amber-200/60 flex items-center justify-center mb-3 shadow-2xs icon-glow-amber">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200/60 flex items-center justify-center mb-3 shadow-2xs icon-glow-blue">
               <IconSparkles className="w-6 h-6" />
             </div>
             <h3 className="text-sm font-bold text-slate-800 mb-1 font-sans">
               Ready for Interactive Hints
             </h3>
             <p className="text-xs text-slate-500 max-w-xs leading-relaxed font-sans">
-              Enter your DSA problem and current attempt on the left, then click <strong className="text-indigo-600">"Get Hint"</strong>.
+              Enter your DSA problem and current attempt on the left, then click <strong className="text-blue-600">"Get Hint"</strong>.
             </p>
             {!hasInput && (
-              <p className="text-[11px] text-slate-400 font-mono mt-3 bg-white px-3 py-1 rounded-md border border-slate-200/60 shadow-2xs">
+              <p className="text-[11px] text-slate-500 font-mono mt-3 bg-white px-3 py-1 rounded-md border border-slate-200/60 shadow-2xs">
                 💡 Tip: Click "Sample Demo" in header to test immediately.
               </p>
             )}
@@ -145,14 +145,14 @@ export function HintPanel({
                 key={idx}
                 className={`border rounded-xl p-4.5 transition-all duration-200 ${
                   isLatest
-                    ? 'border-indigo-200 bg-gradient-to-b from-indigo-50/30 to-white shadow-sm ring-1 ring-indigo-500/10'
+                    ? 'border-blue-200 bg-blue-50/30 shadow-2xs ring-1 ring-blue-500/10'
                     : 'border-slate-200/80 bg-white opacity-90'
                 }`}
               >
                 {/* Hint Step Header */}
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2.5 mb-3">
                   <div className="flex items-center space-x-2">
-                    <span className="text-[10px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-md bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-2xs">
+                    <span className="text-[10px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-md bg-slate-900 text-white shadow-2xs">
                       {hint.level === 'approach' ? 'Full Solution' : `Hint ${hint.level}`}
                     </span>
                     <h3 className="text-xs font-bold text-slate-900 font-sans tracking-tight">
@@ -167,7 +167,7 @@ export function HintPanel({
                       title="Copy hint text"
                     >
                       {copiedIdx === idx ? (
-                        <IconCheck className="w-4 h-4 text-emerald-600" />
+                        <IconCheck className="w-4 h-4 text-blue-600" />
                       ) : (
                         <IconCopy className="w-4 h-4" />
                       )}
@@ -195,14 +195,14 @@ export function HintPanel({
 
         {/* Loading Indicator inside panel */}
         {isLoading && (
-          <div className="border border-indigo-100 bg-indigo-50/40 rounded-xl p-4 animate-pulse space-y-2.5">
+          <div className="border border-blue-100 bg-blue-50/40 rounded-xl p-4 animate-pulse space-y-2.5">
             <div className="flex items-center space-x-2">
-              <div className="w-20 h-4 bg-indigo-200/60 rounded-md"></div>
-              <div className="w-36 h-4 bg-indigo-100 rounded-md"></div>
+              <div className="w-20 h-4 bg-blue-200/60 rounded-md"></div>
+              <div className="w-36 h-4 bg-blue-100 rounded-md"></div>
             </div>
-            <div className="w-full h-3 bg-indigo-100/80 rounded-md"></div>
-            <div className="w-4/5 h-3 bg-indigo-100/60 rounded-md"></div>
-            <div className="w-2/3 h-3 bg-indigo-100/40 rounded-md"></div>
+            <div className="w-full h-3 bg-blue-100/80 rounded-md"></div>
+            <div className="w-4/5 h-3 bg-blue-100/60 rounded-md"></div>
+            <div className="w-2/3 h-3 bg-blue-100/40 rounded-md"></div>
           </div>
         )}
       </div>
@@ -218,7 +218,7 @@ export function HintPanel({
               value={customNote}
               onChange={(e) => setCustomNote(e.target.value)}
               placeholder="Ask a specific question for next hint (e.g. 'Why Two Pointers?')"
-              className="w-full px-3.5 py-2 text-xs bg-slate-50 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 font-sans shadow-2xs"
+              className="w-full px-3.5 py-2 text-xs bg-slate-50 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 font-sans shadow-2xs"
             />
           </div>
 
@@ -227,7 +227,7 @@ export function HintPanel({
               type="button"
               disabled={isLoading}
               onClick={handleNextClick}
-              className="py-2.5 px-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold font-sans flex items-center justify-center space-x-2 transition-all shadow-sm active:scale-[0.99]"
+              className="py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold font-sans flex items-center justify-center space-x-2 transition-all shadow-2xs active:scale-[0.99]"
             >
               <span>Another Hint</span>
               <IconArrowRight className="w-4 h-4 text-white" />
@@ -237,7 +237,7 @@ export function HintPanel({
               type="button"
               disabled={isLoading}
               onClick={onShowApproach}
-              className="py-2.5 px-3 bg-white border border-amber-300 hover:bg-amber-50/80 text-amber-900 rounded-lg text-xs font-bold font-sans flex items-center justify-center space-x-2 transition-all shadow-2xs active:scale-[0.99]"
+              className="py-2.5 px-3 bg-white border border-slate-300 hover:bg-blue-50/80 text-slate-800 rounded-lg text-xs font-bold font-sans flex items-center justify-center space-x-2 transition-all shadow-2xs active:scale-[0.99]"
             >
               <IconLightbulb className="w-4 h-4" />
               <span>Show Approach</span>
@@ -249,13 +249,13 @@ export function HintPanel({
       {/* Full Approach Completed State */}
       {currentLevel === 'approach' && (
         <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-sans">
-          <span className="font-bold text-emerald-700 flex items-center">
+          <span className="font-bold text-blue-700 flex items-center">
             <IconCheck className="w-4 h-4 mr-1.5" />
             Full Optimal Solution Revealed
           </span>
           <button
             onClick={() => onNextHint('reset')}
-            className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 underline font-sans"
+            className="text-xs font-semibold text-blue-600 hover:text-blue-800 underline font-sans"
           >
             Start New Session
           </button>

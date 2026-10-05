@@ -29,12 +29,12 @@ export function ProblemInput({
   const isFormValid = problemDescription.trim().length > 0;
 
   return (
-    <div className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-sm space-y-6">
+    <div className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-2xs space-y-6">
       
       {/* Header of Left Area */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-4">
         <div className="flex items-center space-x-2.5">
-          <div className="p-2 rounded-lg bg-gradient-to-br from-sky-50 to-blue-100/80 border border-sky-200/60 text-sky-700 shadow-2xs icon-glow-indigo">
+          <div className="p-2 rounded-lg bg-blue-50 border border-blue-200/60 text-blue-700 shadow-2xs icon-glow-blue">
             <IconCode className="w-4 h-4" />
           </div>
           <div>
@@ -50,7 +50,7 @@ export function ProblemInput({
         <button
           type="button"
           onClick={onOpenSamples}
-          className="text-xs font-semibold text-slate-700 hover:text-indigo-600 flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200/80 hover:bg-indigo-50/70 hover:border-indigo-200 transition-all font-sans shadow-2xs group"
+          className="text-xs font-semibold text-slate-700 hover:text-blue-600 flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200/80 hover:bg-blue-50/70 hover:border-blue-200 transition-all font-sans shadow-2xs group"
         >
           <IconBookOpen className="w-3.5 h-3.5" />
           <span>Load Preset</span>
@@ -68,7 +68,7 @@ export function ProblemInput({
           value={problemTitle}
           onChange={(e) => setProblemTitle(e.target.value)}
           placeholder="e.g. Container With Most Water, Two Sum II..."
-          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all font-mono shadow-2xs"
+          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 focus:bg-white transition-all font-mono shadow-2xs"
         />
       </div>
 
@@ -76,7 +76,7 @@ export function ProblemInput({
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <label htmlFor="problem-desc" className="block text-xs font-bold text-slate-800 tracking-tight font-sans">
-            Problem Description / Constraints <span className="text-rose-500 font-extrabold">*</span>
+            Problem Description / Constraints <span className="text-blue-600 font-extrabold">*</span>
           </label>
           <span className="text-[11px] text-slate-400 font-sans">Paste problem text or LeetCode description</span>
         </div>
@@ -86,14 +86,14 @@ export function ProblemInput({
           value={problemDescription}
           onChange={(e) => setProblemDescription(e.target.value)}
           placeholder="Paste the problem statement, inputs, outputs, and constraints here..."
-          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all font-mono leading-relaxed shadow-2xs"
+          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 focus:bg-white transition-all font-mono leading-relaxed shadow-2xs"
         />
       </div>
 
       {/* What I Tried So Far */}
       <div className="space-y-1.5">
         <div className="flex items-center space-x-2">
-          <div className="p-1 rounded bg-emerald-50 border border-emerald-200/60">
+          <div className="p-1 rounded bg-slate-100 border border-slate-200/60">
             <IconTerminal className="w-3.5 h-3.5" />
           </div>
           <label htmlFor="user-attempt" className="block text-xs font-bold text-slate-800 tracking-tight font-sans">
@@ -109,7 +109,7 @@ export function ProblemInput({
           value={userAttempt}
           onChange={(e) => setUserAttempt(e.target.value)}
           placeholder="e.g. I tried a nested loop giving O(N^2) which got TLE. I'm stuck trying to optimize it to O(N)..."
-          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all font-mono leading-relaxed shadow-2xs"
+          className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50/70 border border-slate-200/90 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 focus:bg-white transition-all font-mono leading-relaxed shadow-2xs"
         />
       </div>
 
@@ -119,10 +119,10 @@ export function ProblemInput({
           type="button"
           disabled={!isFormValid || isLoading}
           onClick={onGetHint}
-          className={`w-full py-3 px-5 rounded-lg font-bold text-sm flex items-center justify-center space-x-2.5 transition-all shadow-md font-sans ${
+          className={`w-full py-3 px-5 rounded-lg font-bold text-sm flex items-center justify-center space-x-2.5 transition-all shadow-sm font-sans ${
             !isFormValid || isLoading
               ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed shadow-none'
-              : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white active:scale-[0.99] border border-indigo-500/30 shadow-indigo-200'
+              : 'bg-blue-600 hover:bg-blue-700 text-white active:scale-[0.99] border border-blue-700/30 shadow-blue-200'
           }`}
         >
           {isLoading ? (
@@ -136,7 +136,7 @@ export function ProblemInput({
           ) : (
             <>
               <div className="p-1 rounded bg-white/20">
-                <IconSparkles className="w-4 h-4 text-amber-300" />
+                <IconSparkles className="w-4 h-4 text-sky-200" />
               </div>
               <span className="tracking-wide">
                 {currentHintCount === 0 ? 'Get Hint 1' : 'Update & Request Hint'}

@@ -115,7 +115,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/70 text-slate-900 flex flex-col font-sans selection:bg-indigo-600 selection:text-white">
+    <div className="min-h-screen bg-slate-50/80 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
       
       {/* Top Header */}
       <Header
@@ -127,18 +127,18 @@ export default function Home() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         
-        {/* Banner introducing Open-weight Gemma model context */}
-        <div className="mb-6 bg-gradient-to-r from-indigo-900 via-indigo-950 to-slate-900 text-white border border-indigo-800/60 rounded-xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center space-x-3.5">
-            <div className="p-2.5 rounded-xl bg-indigo-800/60 border border-indigo-700/60 text-white shadow-2xs icon-glow-indigo">
-              <IconCpu className="w-5 h-5 text-indigo-300" />
+        {/* Top Info Banner - Light & Subtle DSA Companion Card */}
+        <div className="mb-6 bg-white border border-slate-200/90 rounded-xl p-3.5 sm:p-4 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 rounded-lg bg-blue-50 border border-blue-100 text-blue-600 shadow-2xs">
+              <IconCpu className="w-4 h-4 text-blue-600" />
             </div>
             <div>
-              <p className="text-sm font-extrabold text-white tracking-tight font-sans">
-                Open-Weight AI Tutor Powered by Gemma-2-9B
+              <p className="text-xs sm:text-sm font-bold text-slate-800 tracking-tight font-sans">
+                DSA Study Assistant
               </p>
-              <p className="text-xs text-indigo-200/80 font-sans mt-0.5">
-                Built for Hacktoberfest 2026. Delivers progressive Socratic DSA hints to sharpen your problem solving.
+              <p className="text-[11px] sm:text-xs text-slate-500 font-sans">
+                Built for Hacktoberfest 2026. Progressive hints powered by Gemma-2-9B to guide your thinking.
               </p>
             </div>
           </div>
@@ -146,9 +146,9 @@ export default function Home() {
           <div className="flex items-center space-x-2 text-xs self-end sm:self-center">
             <button
               onClick={() => setIsSamplesOpen(true)}
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white text-xs font-bold font-sans transition-all shadow-md active:scale-[0.99] flex items-center space-x-2 border border-indigo-400/30"
+              className="px-3.5 py-1.5 rounded-lg bg-white border border-slate-200/90 text-slate-700 hover:bg-blue-50/70 hover:text-blue-600 hover:border-blue-200 text-xs font-semibold font-sans transition-all shadow-2xs flex items-center space-x-1.5"
             >
-              <IconSparkles className="w-4 h-4 text-amber-300" />
+              <IconSparkles className="w-3.5 h-3.5 text-blue-600" />
               <span>Try Demo Problem</span>
             </button>
           </div>
@@ -198,11 +198,11 @@ export default function Home() {
             </p>
           </div>
           <div className="flex items-center space-x-4 text-[11px] text-slate-400 font-mono">
-            <span className="text-indigo-600 font-semibold">Hacktoberfest 2026</span>
+            <span className="text-blue-600 font-semibold">Hacktoberfest 2026</span>
             <span>•</span>
-            <span className="text-emerald-600 font-semibold">Open Source</span>
+            <span className="text-slate-600 font-semibold">Open Source</span>
             <span>•</span>
-            <span>Vibrant Typography & Icons</span>
+            <span>Moody Blue & White Theme</span>
           </div>
         </div>
       </footer>
